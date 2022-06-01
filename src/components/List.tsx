@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client'
 import { GET_CHARACTERS } from '../api/queries'
-import { Characters, CharactersVars } from '../api/types'
+import { CharactersData, CharactersVars } from '../api/types'
 import Character from './Character'
 
 const List = () => {
-  const { data, loading, error } = useQuery<Characters, CharactersVars>(
+  const { data, loading, error } = useQuery<CharactersData, CharactersVars>(
     GET_CHARACTERS,
     {
       variables: {

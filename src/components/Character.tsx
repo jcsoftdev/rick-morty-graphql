@@ -1,11 +1,16 @@
+import { Link } from 'react-router-dom'
 import { Character as CharacterType } from '../api/types'
 
 const Character = (character: CharacterType) => {
   return (
-    <div className="Character" key={character.id}>
-      <p>{character.name}</p>
+    <Link
+      to={`character/${character.id}`}
+      className="Character"
+      key={character.id}
+    >
       <img src={character.image} alt="" />
-    </div>
+      <p>{character.name}</p>
+    </Link>
   )
 }
 
