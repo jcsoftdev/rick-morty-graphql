@@ -1,6 +1,8 @@
 import { useQuery } from '@apollo/client'
 import { GET_CHARACTERS } from '../api/queries'
 import { CharactersData, CharactersVars } from '../api/types'
+import { useAppSelector } from '../store'
+import { selectFavorites } from '../store/reducers/favorites'
 import Character from './Character'
 
 const List = () => {
@@ -13,10 +15,13 @@ const List = () => {
     }
   )
 
+  const favorites = useAppSelector(selectFavorites)
+
   const charactersMapped = data?.characters.results.map(character => {
+    const isFavorite = favorites.find(favorite => favorite.id === character.id)
     return {
       ...character,
-      favorite: true
+      favorite: !!isFavorite
     }
   })
 
