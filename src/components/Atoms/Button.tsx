@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 
 interface ButtonProps {
   children: React.ReactNode
-  to?: string
+  className?: string
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  to?: string
+  title?: string
 }
 
-const Button = ({ children, onClick, to }: ButtonProps) => {
+const Button = ({ children, onClick, to, className, title }: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (onClick) {
       onClick(e)
@@ -15,13 +17,17 @@ const Button = ({ children, onClick, to }: ButtonProps) => {
 
   if (to) {
     return (
-      <Link className="Button" to={to}>
+      <Link className={`Button ${className}`} to={to}>
         {children}
       </Link>
     )
   }
   return (
-    <button className="Button" onClick={handleClick}>
+    <button
+      className={`Button ${className}`}
+      onClick={handleClick}
+      title={title}
+    >
       {children}
     </button>
   )

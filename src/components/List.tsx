@@ -12,14 +12,21 @@ const List = () => {
       }
     }
   )
+
+  const charactersMapped = data?.characters.results.map(character => {
+    return {
+      ...character,
+      favorite: true
+    }
+  })
+
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
   return (
     <div className="Characters-List">
-      {data &&
-        data.characters.results.map(character => (
-          <Character key={character.id} {...character} />
-        ))}
+      {charactersMapped?.map(character => (
+        <Character key={character.id} {...character} />
+      ))}
     </div>
   )
 }
