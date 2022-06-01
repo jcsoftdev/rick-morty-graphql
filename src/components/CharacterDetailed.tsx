@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { GET_CHARACTER } from '../api/queries'
 import { CharacterDetailedData, CharacterDetailedVars } from '../api/types'
+import Button from './Atoms/Button'
 
 const CharacterDetailed = () => {
   const { characterId } = useParams()
@@ -26,7 +26,7 @@ const CharacterDetailed = () => {
         <p>Origin: {data?.character.origin.name}</p>
         <p>Status: {data?.character.status}</p>
       </div>
-      <Link to={'/'}>Go back</Link>
+      <Button to={'/'}>Go back</Button>
     </>
   )
 }

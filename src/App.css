@@ -3,8 +3,43 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background: #0000ba;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: #003fff;
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  transform: translateY(-1px) scale(1.02);
+}
+
 .Character {
   text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+.Character:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateY(-5px) scale(1.02);
+}
+.Character-Name {
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem 10px;
 }
 .Characters-List {
   display: grid;

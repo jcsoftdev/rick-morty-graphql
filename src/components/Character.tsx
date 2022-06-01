@@ -9,7 +9,7 @@ const Character = (character: CharacterType) => {
       key={character.id}
     >
       <img src={character.image} alt="" />
-      <p>{character.name}</p>
+      <p className="Character-Name">{character.name}</p>
     </Link>
   )
 }
