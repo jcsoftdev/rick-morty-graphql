@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
-import { GET_CHARACTER } from '../api/queries'
-import { CharacterDetailedData, CharacterDetailedVars } from '../api/types'
-import Button from './Atoms/Button'
+import { GET_CHARACTER } from '../../api/queries'
+import { CharacterDetailedData, CharacterDetailedVars } from '../../api/types'
+import Button from '../Atoms/Button'
 
 const CharacterDetailed = () => {
   const { characterId } = useParams()

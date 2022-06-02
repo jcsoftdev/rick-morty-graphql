@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .Button {
   display: inline-flex;
   align-items: center;
@@ -23,6 +24,7 @@
     transform 0.2s ease-in-out;
   transform: translateY(-1px) scale(1.02);
 }
+
 .Button:active {
   background: #ffa000;
   box-shadow: 0 0 0 1px #ffa000;
@@ -42,6 +44,7 @@
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   transform: translateY(-5px) scale(1.02);
 }
+
 .Character-Name {
   color: #000;
   font-size: 1rem;
@@ -49,6 +52,7 @@
   margin: 0;
   padding: 1rem 10px;
 }
+
 .Characters-List {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -72,6 +76,7 @@
   top: 0;
   right: 0;
 }
+
 .Character:hover .Character-Add {
   display: flex;
   width: 50px;
@@ -106,13 +111,16 @@
   margin: 0;
   padding: 1rem 10px;
 }
+
 .Navbar-List-Item-Link:hover {
   color: #ffb000;
   transition: color 0.2s ease-in-out;
 }
+
 .Navbar-List-Item-Link.active {
   color: #ffb000;
 }
+
 .Navbar-List {
   display: flex;
   align-items: center;

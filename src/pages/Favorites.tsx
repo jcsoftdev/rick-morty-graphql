@@ -1,7 +1,10 @@
-import React from 'react'
+import List from '../components/Organisms/List'
+import { useAppSelector } from '../store'
+import { selectFavorites } from '../store/reducers/favorites'
 
 const Favorites = () => {
-  return <div>Favorites</div>
+  const favorites = useAppSelector(selectFavorites)
+  return <List characters={favorites} />
 }
 
 export default Favorites

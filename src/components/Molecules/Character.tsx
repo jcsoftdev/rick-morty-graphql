@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import { Character as CharacterType } from '../api/types'
-import Button from './Atoms/Button'
-import { AppDispatch } from '../store/index'
+import { Character as CharacterType } from '../../api/types'
+import Button from '../Atoms/Button'
+import { AppDispatch } from '../../store/index'
 import { useDispatch } from 'react-redux'
-import { favoritesSlice } from '../store/reducers/favorites'
+import { favoritesSlice } from '../../store/reducers/favorites'
 
 export interface CharacterProps extends CharacterType {
-  favorite: boolean
+  favorite?: boolean
 }
 
 const Character = (character: CharacterProps) => {
@@ -14,7 +14,9 @@ const Character = (character: CharacterProps) => {
 
   const addFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-    dispatch(favoritesSlice.actions.addFavorite(character))
+    dispatch(
+      favoritesSlice.actions.addFavorite({ ...character, favorite: true })
+    )
   }
 
   const removeFavorite = (
@@ -26,16 +28,16 @@ const Character = (character: CharacterProps) => {
 
   return (
     <Link
-      to={`character/${character.id}`}
+      to={`/character/${character.id}`}
       className="Character"
       key={character.id}
     >
       <Button
         className="Character-Add"
         title={
-          character.favorite ? 'Remove from favorites' : 'Add to favorites'
+          character?.favorite ? 'Remove from favorites' : 'Add to favorites'
         }
-        onClick={character.favorite ? removeFavorite : addFavorite}
+        onClick={character?.favorite ? removeFavorite : addFavorite}
       >
         {character.favorite ? '★' : '☆'}
       </Button>

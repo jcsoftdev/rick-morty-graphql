@@ -1,12 +1,11 @@
-import Character, { CharacterProps } from './Character'
+import Character, { CharacterProps } from '../Molecules/Character'
 interface Props {
   characters: CharacterProps[]
 }
 const List = ({ characters }: Props) => {
-  const charactersData = [...characters]
   return (
     <div className="Characters-List">
-      {charactersData?.map(character => (
+      {characters?.map(character => (
         <Character key={character.id} {...character} />
       ))}
     </div>

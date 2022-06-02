@@ -5,11 +5,11 @@ import { Provider } from 'react-redux'
 import persistStore from 'redux-persist/es/persistStore'
 import { client } from './api'
 import { store } from './store'
-import CharacterDetailed from './components/CharacterDetailed'
+import CharacterDetailed from './components/Molecules/CharacterDetailed'
 
 import './App.css'
 import Home from './pages/Home'
-import Navbar from './components/Navbar'
+import Navbar from './components/Organisms/Navbar'
 import Favorites from './pages/Favorites'
 
 const persistor = persistStore(store)
