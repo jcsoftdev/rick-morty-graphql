@@ -11,6 +11,7 @@ import './App.css'
 import Home from './pages/Home'
 import Navbar from './components/Organisms/Navbar'
 import Favorites from './pages/Favorites'
+import Reto from './pages/Challenge'
 
 const persistor = persistStore(store)
 
@@ -28,6 +29,7 @@ const App = () => {
                   <Route path=":characterId" element={<CharacterDetailed />} />
                 </Route>
                 <Route path="favorites" element={<Favorites />} />
+                <Route path="retos" element={<Reto />} />
                 <Route path="*" element={<div>Not found</div>} />
               </Routes>
             </div>

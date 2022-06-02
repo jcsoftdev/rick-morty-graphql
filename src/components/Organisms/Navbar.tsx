@@ -20,6 +20,11 @@ const Navbar = () => {
                 Favorites
               </NavLink>
             </li>
+            <li className="Navbar-List-Item">
+              <NavLink to="/retos" className={getClassName}>
+                Retos
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

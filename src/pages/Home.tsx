@@ -48,7 +48,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const quantity = data?.characters.results.length || 0
+    const quantity = data?.characters.results.length || 20
 
     if (quantity < 20) {
       setNoMore(true)
@@ -112,7 +112,7 @@ const Home = () => {
       <List characters={charactersMapped} />
       {!loading && !noMore && (
         <div className="Loader" ref={loadMoreRef}>
-          {hasMore && <p>Loading l...</p>}
+          {hasMore && <p>Loading more...</p>}
         </div>
       )}
       {!error && noMore && !loading && <p>No more characters</p>}
