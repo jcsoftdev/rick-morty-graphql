@@ -1,27 +1,33 @@
 import { ApolloProvider } from '@apollo/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
+import { Provider } from 'react-redux'
+import persistStore from 'redux-persist/es/persistStore'
 import { client } from './api'
+import { store } from './store'
+import CharacterDetailed from './components/CharacterDetailed'
 import List from './components/List'
 
 import './App.css'
-import CharacterDetailed from './components/CharacterDetailed'
-import { Provider } from 'react-redux'
-import { store } from './store'
+
+const persistor = persistStore(store)
 
 const App = () => {
   return (
     <div className="App">
       <Provider store={store}>
-        <ApolloProvider client={client}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<List />} />
-              <Route path="character">
-                <Route path=":characterId" element={<CharacterDetailed />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </ApolloProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <ApolloProvider client={client}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<List />} />
+                <Route path="character">
+                  <Route path=":characterId" element={<CharacterDetailed />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </ApolloProvider>
+        </PersistGate>
       </Provider>
     </div>
   )
