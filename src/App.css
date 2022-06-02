@@ -1,4 +1,4 @@
-.App {
+.AppWrapper {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
@@ -79,4 +79,44 @@
   transition: background-color 0.2s ease-in-out, width 0.2s ease-in-out,
     height 0.2s ease-in-out;
   font-size: 2rem;
+}
+
+.Navbar-Container {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  background: #f0f0f0;
+  border-bottom: 2px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Navbar-List-Item-Link {
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem 10px;
+}
+.Navbar-List-Item-Link:hover {
+  color: #ffb000;
+  transition: color 0.2s ease-in-out;
+}
+.Navbar-List-Item-Link.active {
+  color: #ffb000;
+}
+.Navbar-List {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
 }

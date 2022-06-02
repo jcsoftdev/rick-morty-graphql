@@ -6,30 +6,35 @@ import persistStore from 'redux-persist/es/persistStore'
 import { client } from './api'
 import { store } from './store'
 import CharacterDetailed from './components/CharacterDetailed'
-import List from './components/List'
 
 import './App.css'
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
+import Favorites from './pages/Favorites'
 
 const persistor = persistStore(store)
 
 const App = () => {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <ApolloProvider client={client}>
-            <BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ApolloProvider client={client}>
+          <BrowserRouter>
+            <Navbar />
+            <div className="AppWrapper">
               <Routes>
-                <Route path="/" element={<List />} />
+                <Route path="/" element={<Home />} />
                 <Route path="character">
                   <Route path=":characterId" element={<CharacterDetailed />} />
                 </Route>
+                <Route path="favorites" element={<Favorites />} />
+                <Route path="*" element={<div>Not found</div>} />
               </Routes>
-            </BrowserRouter>
-          </ApolloProvider>
-        </PersistGate>
-      </Provider>
-    </div>
+            </div>
+          </BrowserRouter>
+        </ApolloProvider>
+      </PersistGate>
+    </Provider>
   )
 }
 

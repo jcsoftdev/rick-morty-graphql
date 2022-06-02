@@ -5,11 +5,11 @@ import { AppDispatch } from '../store/index'
 import { useDispatch } from 'react-redux'
 import { favoritesSlice } from '../store/reducers/favorites'
 
-interface Props extends CharacterType {
+export interface CharacterProps extends CharacterType {
   favorite: boolean
 }
 
-const Character = (character: Props) => {
+const Character = (character: CharacterProps) => {
   const dispatch = useDispatch<AppDispatch>()
 
   const addFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
