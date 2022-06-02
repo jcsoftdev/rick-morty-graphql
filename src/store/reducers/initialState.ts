@@ -1,6 +1,7 @@
 const initialState = () => ({
   favorites: {
-    list: []
+    list: [],
+    search: ''
   }
 })
 export default initialState

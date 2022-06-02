@@ -14,6 +14,7 @@ export interface CharactersData {
 }
 export interface CharactersVars {
   page: number
+  search?: string
 }
 
 interface Episode {

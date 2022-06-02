@@ -75,6 +75,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .Character:hover .Character-Add {
@@ -88,7 +89,7 @@
 
 .Navbar-Container {
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin-block-end: 16px;
   background: #f0f0f0;
   border-bottom: 2px solid #e0e0e0;
   position: sticky;
@@ -127,4 +128,27 @@
   gap: 10px;
   list-style: none;
   padding: 0;
+}
+
+.Search {
+  border-radius: 3px;
+  margin-block-end: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Search input {
+  border: 0;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  background: #f0f0f0;
+}
+
+.Search label {
+  font-size: 0.8rem;
 }
