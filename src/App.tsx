@@ -1,5 +1,5 @@
 import { ApolloProvider } from '@apollo/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import persistStore from 'redux-persist/es/persistStore'
@@ -20,7 +20,7 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ApolloProvider client={client}>
-          <BrowserRouter>
+          <HashRouter>
             <Navbar />
             <div className="AppWrapper">
               <Routes>
@@ -33,7 +33,7 @@ const App = () => {
                 <Route path="*" element={<div>Not found</div>} />
               </Routes>
             </div>
-          </BrowserRouter>
+          </HashRouter>
         </ApolloProvider>
       </PersistGate>
     </Provider>
